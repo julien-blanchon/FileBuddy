@@ -4,6 +4,7 @@ import { cubicOut } from 'svelte/easing';
 import type { TransitionConfig } from 'svelte/transition';
 import { customAlphabet } from 'nanoid';
 
+
 export function cn(...inputs: ClassValue[]) {
 	return twMerge(clsx(inputs));
 }
@@ -69,3 +70,27 @@ export const flyAndScale = (
 		easing: cubicOut
 	};
 };
+
+export const getLocalStore = (key: string, defaultValue: any) => {
+	const json = localStorage.getItem(key);
+	if (json === null) return defaultValue;
+	return JSON.parse(json);
+}
+
+export const removeLocalStore = (key: string) => {
+	localStorage.removeItem(key);
+}
+
+export const updateLocalStore = (key: string, value: any) => {
+	const keyExists = getLocalStore(key, null) !== null;
+	if (keyExists) {
+			removeLocalStore(key);
+			localStorage.setItem(key, JSON.stringify(value));
+	} else {
+			localStorage.setItem(key, JSON.stringify(value));
+	}
+}
+
+export const clearLocalStore = () => {
+	localStorage.clear();
+}
