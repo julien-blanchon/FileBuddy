@@ -43,7 +43,7 @@ Render a page from a PDF document. Must be a child of a `Document` component.
 	 * Render a separate text layer (only for the canvas renderer.)
 	 * @default {false}
 	 */
-	export let renderTextLayer: boolean = false;
+	export let renderTextLayer: boolean = true;
 
 	/**
 	 * A callback invoked with the current page used to determine the viewport.

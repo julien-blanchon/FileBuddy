@@ -13,22 +13,24 @@
 	export let reload: UseChatHelpers['reload'];
 	export let messages: UseChatHelpers['messages'];
 	export let input: UseChatHelpers['input'];
+
+	export let context: { id: string; content: string } | undefined = undefined;
 </script>
 
 <div class="mx-auto sm:max-w-2xl sm:px-4">
-	<div class="flex h-10 items-center justify-center">
+	<!-- <div class="flex h-10 items-center justify-center pb-4 sm:pb-6">
 		{#if $isLoading}
 			<Button variant="outline" on:click={() => stop()} class="bg-background">
 				<IconStop class="mr-2" />
 				Stop generating
 			</Button>
 		{:else if $messages?.length > 0}
-			<Button variant="outline" on:click={() => reload()} class="bg-background">
-				<IconRefresh class="mr-2" />
+			<Button variant="outline" on:click={() => reload()} class="bg-background mb-2">
+				<IconRefresh class="mr-2 " />
 				Regenerate response
 			</Button>
 		{/if}
-	</div>
+	</div> -->
 	<div
 		class="space-y-4 border-t bg-background px-4 py-2 shadow-lg sm:rounded-t-xl sm:border md:py-4"
 	>
@@ -42,6 +44,7 @@
 			}}
 			{input}
 			{isLoading}
+			{context}
 		/>
 		<FooterText class="hidden sm:block" />
 	</div>

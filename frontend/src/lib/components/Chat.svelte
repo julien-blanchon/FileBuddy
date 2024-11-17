@@ -13,7 +13,7 @@
 	let className: string | undefined | null = undefined;
 	export { className as class };
 
-	const { messages, append, reload, stop, isLoading, input } = useChat({
+	export const { messages, append, reload, stop, isLoading, input } = useChat({
 		initialMessages,
 		id,
 		body: {
@@ -21,10 +21,12 @@
 			previewToken
 		}
 	});
+
+	export let context: { id: string; content: string } | undefined = undefined;
 </script>
 
-<div class="flex flex-col space-y-48">
-	<div class={cn('pb-3 pt-4 md:pt-10', className)}>
+<div class="flex flex-col h-full">
+	<div class={cn('pb-3 pt-4 md:pt-10 mx-20 flex-grow h-full', className)}>
 		{#if $messages.length}
 			<ChatList {messages} />
 		{:else}
@@ -32,7 +34,7 @@
 		{/if}
 	</div>
 
-	<div class="sticky bottom-0 z-10 h-full overflow-hidden">
-		<ChatPanel {id} {isLoading} {stop} {append} {reload} {messages} {input} />
+	<div class="sticky bottom-0 max-h-40 z-10 h-full overflow-hidden">
+		<ChatPanel {id} {isLoading} {stop} {append} {reload} {messages} {input} {context} />
 	</div>
 </div>

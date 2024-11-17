@@ -10,6 +10,7 @@
 	export let id: string;
 	export let color: string;
 	export let content: string;
+	export let isHighlighted: boolean = false;
 	let className: string | undefined = undefined;
 	export { className as class };
 </script>
@@ -17,7 +18,8 @@
 <ButtonPrimitive.Root
 	class={cn(
 		'rounded-sm absolute border border-blue-500 z-10 overflow-hidden',
-		'opacity-20 hover:opacity-80 p-5',
+		'opacity-5 hover:opacity-80 p-5',
+		isHighlighted && 'opacity-80',
 		className
 	)}
 	{...$$restProps}

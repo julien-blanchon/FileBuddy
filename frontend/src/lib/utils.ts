@@ -94,3 +94,19 @@ export const updateLocalStore = (key: string, value: any) => {
 export const clearLocalStore = () => {
 	localStorage.clear();
 }
+
+export function idToColor(id: string): string {
+    // Create a simple hash of the ID
+    let hash = 0;
+    for (let i = 0; i < id.length; i++) {
+        hash = id.charCodeAt(i) + ((hash << 5) - hash);
+    }
+
+    // Convert the hash to an RGB color
+    const r = (hash >> 16) & 0xFF;
+    const g = (hash >> 8) & 0xFF;
+    const b = hash & 0xFF;
+
+    // Return the color as a CSS-friendly hex string
+    return `rgb(${r}, ${g}, ${b})`;
+}

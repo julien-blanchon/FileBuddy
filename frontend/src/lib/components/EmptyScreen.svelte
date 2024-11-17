@@ -8,31 +8,30 @@
 
 	const exampleMessages = [
 		{
-			heading: 'Explain technical concepts',
-			message: `What is a "serverless function"?`
+			heading: 'Clarify legal terms',
+			message: `What does "force majeure" mean in a contract?`
 		},
 		{
-			heading: 'Summarize an article',
-			message: 'Summarize the following article for a 2nd grader: \n'
+			heading: 'Help with a legal form',
+			message: `How do I fill out the "Power of Attorney" form?`
 		},
 		{
-			heading: 'Draft an email',
-			message: `Draft an email to my boss about the following: \n`
+			heading: 'Draft a legal letter',
+			message: `Draft a formal letter to dispute a parking ticket.`
 		}
 	];
 </script>
 
 <div class="mx-auto max-w-2xl px-4">
 	<div class="rounded-lg border bg-background p-8">
-		<h1 class="mb-2 text-lg font-semibold">Welcome to SvelteKit AI Chatbot!</h1>
+		<h1 class="mb-2 text-lg font-semibold">Welcome to Legal Buddy!</h1>
 		<p class="mb-2 leading-normal text-muted-foreground">
-			This is an open source AI chatbot app template built with
+			Your AI-powered assistant for navigating complex legal forms and documents. Built with
 			<ExternalLink href="https://kit.svelte.dev">SvelteKit</ExternalLink> and
-			<ExternalLink href="https://vercel.com/storage/kv">Vercel KV</ExternalLink>
-			.
+			<ExternalLink href="https://vercel.com/storage/kv">Vercel KV</ExternalLink>.
 		</p>
 		<p class="leading-normal text-muted-foreground">
-			You can start a conversation here or try the following examples:
+			You can ask for assistance or try one of these examples:
 		</p>
 		<div class="mt-4 flex flex-col items-start space-y-2">
 			{#each exampleMessages as message}
