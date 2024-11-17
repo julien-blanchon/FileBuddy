@@ -4,6 +4,7 @@
 	import Header from '$lib/components/Header.svelte';
 	import DragDrop from '$lib/components/DragDrop.svelte';
 
+  import { Toaster } from 'svelte-french-toast';
 
 	import { resolvedTheme } from '$lib/theme';
 
@@ -30,6 +31,7 @@
 </svelte:head>
 
 <main>
+	<Toaster />
 	<Resizable.PaneGroup
   direction="vertical"
   class="min-h-screen max-w-full"
