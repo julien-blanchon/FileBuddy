@@ -23,12 +23,15 @@
 	});
 </script>
 
-<div class={cn('pb-[200px] pt-4 md:pt-10', className)}>
-	{#if $messages.length}
-		<ChatList {messages} />
-	{:else}
-		<EmptyScreen {input} />
-	{/if}
-</div>
+<div class="flex flex-col space-y-48">
+	<div class={cn('pb-[200px] pt-4 md:pt-10', className)}>
+		{#if $messages.length}
+			<ChatList {messages} />
+		{:else}
+			<EmptyScreen {input} />
+		{/if}
+	</div>
+	
+	<ChatPanel {id} {isLoading} {stop} {append} {reload} {messages} {input} />
 
-<ChatPanel {id} {isLoading} {stop} {append} {reload} {messages} {input} />
+</div>
