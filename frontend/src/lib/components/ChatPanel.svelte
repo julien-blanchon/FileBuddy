@@ -15,37 +15,34 @@
 	export let input: UseChatHelpers['input'];
 </script>
 
-<div class="mt-8">
-	<ButtonScrollToBottom />
-	<div class="mx-auto sm:max-w-2xl sm:px-4">
-		<div class="flex h-10 items-center justify-center">
-			{#if $isLoading}
-				<Button variant="outline" on:click={() => stop()} class="bg-background">
-					<IconStop class="mr-2" />
-					Stop generating
-				</Button>
-			{:else if $messages?.length > 0}
-				<Button variant="outline" on:click={() => reload()} class="bg-background">
-					<IconRefresh class="mr-2" />
-					Regenerate response
-				</Button>
-			{/if}
-		</div>
-		<div
-			class="space-y-4 border-t bg-background px-4 py-2 shadow-lg sm:rounded-t-xl sm:border md:py-4"
-		>
-			<PromptForm
-				on:submit={async (event) => {
-					await append({
-						id,
-						content: event.detail,
-						role: 'user'
-					});
-				}}
-				{input}
-				{isLoading}
-			/>
-			<FooterText class="hidden sm:block" />
-		</div>
+<div class="mx-auto sm:max-w-2xl sm:px-4">
+	<div class="flex h-10 items-center justify-center">
+		{#if $isLoading}
+			<Button variant="outline" on:click={() => stop()} class="bg-background">
+				<IconStop class="mr-2" />
+				Stop generating
+			</Button>
+		{:else if $messages?.length > 0}
+			<Button variant="outline" on:click={() => reload()} class="bg-background">
+				<IconRefresh class="mr-2" />
+				Regenerate response
+			</Button>
+		{/if}
+	</div>
+	<div
+		class="space-y-4 border-t bg-background px-4 py-2 shadow-lg sm:rounded-t-xl sm:border md:py-4"
+	>
+		<PromptForm
+			on:submit={async (event) => {
+				await append({
+					id,
+					content: event.detail,
+					role: 'user'
+				});
+			}}
+			{input}
+			{isLoading}
+		/>
+		<FooterText class="hidden sm:block" />
 	</div>
 </div>

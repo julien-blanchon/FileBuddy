@@ -62,15 +62,15 @@ importers:
       svelte-copy-to-clipboard:
         specifier: ^0.2.5
         version: 0.2.5
+      svelte-file-dropzone:
+        specifier: ^2.0.9
+        version: 2.0.9(svelte@4.2.19)
       svelte-motion:
         specifier: ^0.12.2
         version: 0.12.2(svelte@4.2.19)
       svelte-pdfjs:
         specifier: ^0.9.0
         version: 0.9.0(pdfjs-dist@4.8.69)(svelte@4.2.19)
-      svelte-file-dropzone:
-        specifier: ^2.0.9
-        version: 2.0.9(svelte@4.2.19)
       tailwind-merge:
         specifier: ^2.0.0
         version: 2.5.4
@@ -111,9 +111,6 @@ importers:
       eslint-plugin-svelte:
         specifier: ^2.35.0
         version: 2.46.0(eslint@8.57.1)(svelte@4.2.19)
-      lucide-svelte:
-        specifier: ^0.292.0
-        version: 0.292.0(svelte@4.2.19)
       paneforge:
         specifier: ^0.0.6
         version: 0.0.6(svelte@4.2.19)

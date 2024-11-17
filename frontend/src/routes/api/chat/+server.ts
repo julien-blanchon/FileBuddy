@@ -32,6 +32,7 @@ export const POST = (async ({ request }) => {
 		stream: true
 	});
 
+
 	// Convert the response into a friendly text-stream
 	const stream = OpenAIStream(response, {
 		// eslint-disable-next-line @typescript-eslint/no-unused-vars

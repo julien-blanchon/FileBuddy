@@ -1,9 +1,7 @@
 <script lang="ts">
 	import { browser } from '$app/environment';
-	import * as Resizable from "$lib/components/ui/resizable/index";
-	import Header from '$lib/components/Header.svelte';
-	import DragDrop from '$lib/components/DragDrop.svelte';
 
+	import Header from '$lib/components/Header.svelte';
 
 	import { resolvedTheme } from '$lib/theme';
 
@@ -23,40 +21,17 @@
 			document.documentElement.classList.add(value);
 		})
 	);
+
+	import { set_pdfjs_context } from '$lib/components/PDF/utils/vite';
+
+	set_pdfjs_context();
 </script>
 
 <svelte:head>
 	<title>SvelteKit AI Chatbot</title>
 </svelte:head>
 
-<main>
-	<Resizable.PaneGroup
-  direction="vertical"
-  class="min-h-screen max-w-full"
->
-  <Resizable.Pane defaultSize={7} minSize={5}>
-    <div class="flex h-full">
-      <Header {chats} />
-    </div>
-  </Resizable.Pane>
-  <Resizable.Handle />
-  <Resizable.Pane defaultSize={93} minSize={90}>
-		<Resizable.PaneGroup
-			direction="horizontal"
-			class="min-h-screen max-w-full"
-		>
-			<Resizable.Pane defaultSize={50} minSize={30}>
-				<div class="flex flex-col h-full w-full">
-					<slot />
-				</div>
-			</Resizable.Pane>
-			<Resizable.Handle withHandle />
-			<Resizable.Pane defaultSize={50} minSize={30}>
-				<div class="flex h-full w-full">
-					<DragDrop />
-				</div>
-			</Resizable.Pane>
-		</Resizable.PaneGroup>
-  </Resizable.Pane>
-</Resizable.PaneGroup>
+<Header {chats} />
+<main class="w-screen h-screen overflow-hidden">
+	<slot />
 </main>
