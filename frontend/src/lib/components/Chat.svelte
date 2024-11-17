@@ -26,7 +26,7 @@
 </script>
 
 <div class="flex flex-col h-full overflow-scroll">
-	<div class={cn('pb-3 pt-4 md:pt-10 mx-20 flex-grow h-full', className)}>
+	<div class={cn(' pt-4 md:pt-10 mx-20  h-full flex flex-col gap-5 ', className)}>
 		{#if $messages.length}
 			<ChatList {messages} />
 		{:else}

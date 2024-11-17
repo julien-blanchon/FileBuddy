@@ -17,7 +17,9 @@
 	export let context: { id: string; content: string } | undefined = undefined;
 </script>
 
-<div class="mx-auto sm:max-w-2xl sm:px-4 overflow-scroll">
+<!-- <div class="mx-auto sm:max-w-2xl sm:px-4 overflow-scroll"> -->
+<!-- class="fixed z-50 bottom-0 left-0 right-0 "> -->
+<div class="fixed z-50 bottom-0 w-full left-40 mx-auto sm:max-w-2xl sm:px-4 overflow-scroll">
 	<!-- <div class="flex h-10 items-center justify-center pb-4 sm:pb-6">
 		{#if $isLoading}
 			<Button variant="outline" on:click={() => stop()} class="bg-background">
