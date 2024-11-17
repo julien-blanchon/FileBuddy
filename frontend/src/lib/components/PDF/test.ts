@@ -60,7 +60,7 @@ export const example: PdfContentChunk[] = [
         "id": 6,
         "bbox": {
             left: 439,
-            top: 202.89,
+            top: 197,
             width: 99.74,
             height: 8
         },
@@ -82,7 +82,7 @@ export const example: PdfContentChunk[] = [
         "id": 8,
         "bbox": {
             left: 439,
-            top: 225.89,
+            top: 220,
             width: 76.14,
             height: 8
         },
@@ -117,7 +117,7 @@ export const example: PdfContentChunk[] = [
             left: 439,
             top: 249.89,
             width: 66.54,
-            height: 118
+            height: 125
         },
         "content": "| Demande introduite : |\n|---------------------|\n| \u25a1 Aupr\u00e8s d'une ambassade/ d'un consulat |\n| \u25a1 Aupr\u00e8s d'une pr\u00e9fecture |\n| \u25a1 Aupr\u00e8s du CAC |\n| \u25a1 Aupr\u00e8s d'un prestataire de services |\n| \u25a1 Aupr\u00e8s d'un interm\u00e9diaire commercial |\n| \u25a1 \u00e0 la fronti\u00e8re |\n| Nom : |\n| \u25a1 autres |",
         "page": 1
@@ -157,11 +157,11 @@ export const example: PdfContentChunk[] = [
     },
     {
         "id": 15,
-        "bbox": {
+        "bbox":  {
             left: 439,
-            top: 395.89,
-            width: 75.64,
-            height: 8
+            top: 385,
+            width: 105,
+            height: 85
         },
         "content": "| Documents justificatifs : |\n|--------------------------|\n| \u25a1 Document de voyage |\n| \u25a1 Moyens de subsistance |\n| \u25a1 Invitation |\n| \u25a1 Moyen de transport |\n| \u25a1 Assurance maladie en voyage |\n| \u25a1 Autres : |",
         "page": 1
@@ -182,8 +182,8 @@ export const example: PdfContentChunk[] = [
         "bbox": {
             left: 439,
             top: 501.89,
-            width: 89.04,
-            height: 8
+    width: 265,
+    height: 83
         },
         "content": "| D\u00e9cision concernant le visa : |\n|------------------------------|\n| \u25a1 Refus\u00e9 |\n| \u25a1 D\u00e9livr\u00e9 |\n| \u25a1 A |\n| \u25a1 C |\n| \u25a1 VTL |",
         "page": 1
@@ -204,8 +204,8 @@ export const example: PdfContentChunk[] = [
         "bbox": {
             left: 439,
             top: 584.89,
-            width: 26.24,
-            height: 8
+    width: 265,
+    height: 60
         },
         "content": "| Valable : |\n|-----------|\n| du : .......................................... |\n| au : .......................................... |",
         "page": 1
@@ -248,8 +248,8 @@ export const example: PdfContentChunk[] = [
         "bbox": {
             left: 439,
             top: 655.89,
-            width: 59.64,
-            height: 8
+    width: 265,
+    height: 37
         },
         "content": "| Nombre d'entr\u00e9es : |\n|-------------------|\n| \u25a1 1 \u25a1 2 \u25a1 Multiples |",
         "page": 1
@@ -346,20 +346,20 @@ export const example: PdfContentChunk[] = [
         "id": 32,
         "bbox": {
             left: 33,
-            top: 476.89,
-            width: 513.85,
-            height: 146.5
-        },
+        top: 400,
+        width: 427,
+        height: 150
+    },
         "content": "Nom, pr\u00e9nom, adresse, t\u00e9l\u00e9phone, t\u00e9l\u00e9copieur et adresse \u00e9lectronique de la personne de contact dans l'entreprise/organisation :\n\n*33. Les frais de voyage et subsistance durant votre s\u00e9jour sont financ\u00e9s :",
         "page": 2
     },
     {
         "id": 33,
         "bbox": {
-            left: 36,
-            top: 646.89,
-            width: 350.95,
-            height: 55.5
+            left: 34,
+            top: 178,
+            width: 543.67,
+            height: 635
         },
         "content": "| \u25a1 par vous-m\u00eame | \u25a1 par un garant (h\u00f4te, entreprise, organisation), veuillez pr\u00e9ciser |\n|-----------------|-------------------------------------------------------------------|\n| Moyens de subsistance : | \u25a1 vis\u00e9 dans les cases 31 ou 32 |\n| \u25a1 Argent liquide | \u25a1 autres (\u00e0 pr\u00e9ciser) : ................................................ |\n| \u25a1 Ch\u00e8ques de voyage | |\n| \u25a1 Carte de cr\u00e9dit | |\n| \u25a1 H\u00e9bergement pr\u00e9pay\u00e9 | Moyens de subsistance : |\n| \u25a1 Transport pr\u00e9pay\u00e9 | \u25a1 Argent liquide |\n| \u25a1 Autres (\u00e0 pr\u00e9ciser) : | \u25a1 H\u00e9bergement fourni |\n| | \u25a1 Tous les frais sont financ\u00e9s pendant le s\u00e9jour |\n| | \u25a1 Transport pay\u00e9 |\n| | \u25a1 Autres (\u00e0 pr\u00e9ciser) : |",
         "page": 2
