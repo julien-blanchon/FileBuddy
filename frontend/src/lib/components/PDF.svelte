@@ -6,7 +6,7 @@
 	import ButtonOverlay from '$lib/components/PDF/Overlay/ButtonOverlay.svelte';
 
 	export let pdfFileUrl: string;
-	let scale: number = 0.8;
+	export let scale: number = 0.8;
 	let num: number = 1;
 	let max_pages: number = 1;
 	let renderTextLayer: boolean = true;
@@ -83,6 +83,7 @@
 				</div></Document
 			>
 		</div>
+
 		<div class="text-center p-2 w-full h-10 flex justify-between">
 			<!-- Previous Button -->
 			<Button

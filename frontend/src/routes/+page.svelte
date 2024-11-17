@@ -20,6 +20,7 @@
 	let context: { id: string; content: string } | undefined = undefined;
 
 	let highlighted_id: string[] | undefined = ['9', '10'];
+	let scale: number = 0.8;
 </script>
 
 <Resizable.PaneGroup direction="horizontal" class="mt-10">
@@ -34,18 +35,25 @@
 				bind:reload
 				bind:messages
 				bind:context
+				bind:highlighted_id
 			/>
 		</div>
 	</Resizable.Pane>
 	<Resizable.Handle withHandle class="mt-10 mb-16 mx-4 w-2 rounded-xl" />
 	<Resizable.Pane defaultSize={50} minSize={30} class="mt-10">
+		<div class="flex justify-center items-center space-x-4">
+			<!-- Scale slider -->
+			<input type="range" min="0.1" max="2" step="0.1" bind:value={scale} class="w-1/3" />
+		</div>
 		<div class="h-full overflow-y-scroll m-5">
 			{#if pdfFileUrl}
 				<Pdf
+					{scale}
 					{pdfFileUrl}
 					bind:highlighted_id
 					onClickOverlayButton={async ({ id, bbox, page, content }) => {
-						input.set(content);
+						// input.set(content);
+						input.set('You are a visa assistant, you must answer in english' + content);
 						context = { id: id.toString(), content: content };
 
 						// Wait for 0.5s than submit and than reset context and input

@@ -1,8 +1,9 @@
 // import { nanoid } from '$lib/utils';
 import type { Config } from '@sveltejs/adapter-vercel';
 import { OpenAIStream, StreamingTextResponse } from 'ai';
-import { Configuration, OpenAIApi } from 'openai-edge';
-
+import OpenAI from 'openai';
+import { chat_prompt_template } from '$lib/prompt_templates';
+import { example } from '$lib/components/PDF/test';
 import { env } from '$env/dynamic/private';
 // You may want to replace the above with a static private env variable
 // for dead-code elimination and build-time type-checking:
@@ -16,25 +17,34 @@ export const config: Config = {
 
 export const POST = (async ({ request }) => {
 	const json = await request.json();
-	const { messages, previewToken } = json;
+	const { messages } = json;
 
-	// Create an OpenAI API client
-	const config = new Configuration({
-		apiKey: previewToken || env.OPENAI_API_KEY
-	});
-	const openai = new OpenAIApi(config);
-
-	// Ask OpenAI for a streaming chat completion given the prompt
-	const response = await openai.createChatCompletion({
-		model: 'gpt-3.5-turbo',
-		messages,
-		temperature: 0.7,
-		stream: true
+	const ChatClient = new OpenAI({
+		// name: env.CHAT_MODEL,
+		baseURL: env.CHAT_BASE_URL,
+		apiKey: env.CHAT_APIKEY
 	});
 
+	// Create a prompt with the user's messages
+	const chatPrompt = chat_prompt_template.replace("{example}", JSON.stringify(example)).replace("{user_question}", messages[0].content);
 
+	const chatpayload = [
+		{
+			role: 'user',
+			content: chatPrompt
+		}
+	]
+
+	const chatResponse = await ChatClient.chat.completions.create({
+		model: "arcee-train/Arcee-Medius-32B-Maz-v0.5",
+		stream: true,
+		messages: chatpayload
+	});
+
+	console.log("chatResponse", chatResponse);
+		
 	// Convert the response into a friendly text-stream
-	const stream = OpenAIStream(response, {
+	const stream = OpenAIStream(chatResponse, {
 		// eslint-disable-next-line @typescript-eslint/no-unused-vars
 		async onCompletion(completion) {
 			// const title = messages[0].content.substring(0, 100);

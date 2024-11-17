@@ -13,7 +13,7 @@
 	export let reload: UseChatHelpers['reload'];
 	export let messages: UseChatHelpers['messages'];
 	export let input: UseChatHelpers['input'];
-
+	export let highlighted_id: string[] | undefined = undefined;
 	export let context: { id: string; content: string } | undefined = undefined;
 </script>
 
@@ -36,6 +36,24 @@
 	>
 		<PromptForm
 			on:submit={async (event) => {
+				// Call /api/chat/tool to get the highlighted_id
+				// highlighted_id = ...
+				console.log('uhiuhshsdhsdi');
+				const res = await fetch('/api/chat/tool	', {
+					method: 'POST',
+					headers: {
+						'Content-Type': 'application/json'
+					},
+					body: JSON.stringify({ $messages })
+				});
+
+				if (res.ok) {
+					const data = await res.json();
+					highlighted_id = data.ids;
+				} else {
+					console.error('Failed to fetch');
+				}
+
 				await append({
 					id,
 					content: event.detail,

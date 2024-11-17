@@ -12,7 +12,7 @@
 	export let initialMessages: Message[] | undefined = undefined;
 	let className: string | undefined | null = undefined;
 	export { className as class };
-
+	export let highlighted_id: string[] | undefined = undefined;
 	export const { messages, append, reload, stop, isLoading, input } = useChat({
 		initialMessages,
 		id,
@@ -35,6 +35,16 @@
 	</div>
 
 	<div class="sticky bottom-0 max-h-40 z-10 h-full overflow-hidden">
-		<ChatPanel {id} {isLoading} {stop} {append} {reload} {messages} {input} {context} />
+		<ChatPanel
+			bind:highlighted_id
+			{id}
+			{isLoading}
+			{stop}
+			{append}
+			{reload}
+			{messages}
+			{input}
+			{context}
+		/>
 	</div>
 </div>
