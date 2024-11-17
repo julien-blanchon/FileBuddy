@@ -2,6 +2,7 @@
 	import { browser } from '$app/environment';
 
 	import Header from '$lib/components/Header.svelte';
+	import { Toaster } from 'svelte-french-toast';
 
 	import { resolvedTheme } from '$lib/theme';
 
@@ -32,6 +33,7 @@
 </svelte:head>
 
 <Header {chats} />
+<Toaster />
 <main class="w-screen h-screen overflow-hidden">
 	<slot />
 </main>
