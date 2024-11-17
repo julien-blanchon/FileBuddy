@@ -17,8 +17,7 @@
 
 	function onLoadSuccess(event: CustomEvent) {
 		max_pages = event.detail.numPages;
-		// num = Math.min(num, max_pages);
-		num = 2;
+		num = Math.min(num, max_pages);
 		const canvas = document.querySelector('canvas');
 		if (!canvas) {
 			return;

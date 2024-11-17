@@ -19,7 +19,7 @@
 
 	let context: { id: string; content: string } | undefined = undefined;
 
-	let highlighted_id: string[] | undefined = ['9', '10'];
+	let highlighted_id: string[] | undefined = undefined;
 	let scale: number = 0.8;
 </script>
 
