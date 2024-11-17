@@ -36,7 +36,7 @@ export const POST = (async ({ request }) => {
 	]
 
 	const chatResponse = await ChatClient.chat.completions.create({
-		model: "arcee-train/Arcee-Medius-32B-Maz-v0.5",
+		model: "llama-3.1-70b-versatile",
 		stream: true,
 		messages: chatpayload
 	});
