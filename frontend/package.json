@@ -16,6 +16,7 @@
 		"@auth/sveltekit": "^0.3.12",
 		"@fontsource/inter": "^5.0.15",
 		"@fontsource/jetbrains-mono": "^5.0.17",
+		"@vercel/blob": "^0.26.0",
 		"@vercel/kv": "^1.0.0",
 		"ai": "^2.2.24",
 		"bits-ui": "^0.9.8",

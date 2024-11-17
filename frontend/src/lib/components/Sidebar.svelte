@@ -17,7 +17,7 @@
 			<span class="sr-only">Toggle Sidebar</span>
 		</Button>
 	</SheetTrigger>
-	<SheetContent class="inset-y-0 flex h-auto w-[300px] flex-col p-0">
+	<SheetContent class="inset-y-0 flex h-auto w-[300px] flex-col p-0" side="left">
 		<SheetHeader class="p-4">
 			<SheetTitle class="text-sm">Chat History</SheetTitle>
 		</SheetHeader>

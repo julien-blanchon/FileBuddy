@@ -1,5 +1,4 @@
-import { kv } from '$lib/kv';
-import { nanoid } from '$lib/utils';
+// import { nanoid } from '$lib/utils';
 import type { Config } from '@sveltejs/adapter-vercel';
 import { OpenAIStream, StreamingTextResponse } from 'ai';
 import { Configuration, OpenAIApi } from 'openai-edge';
@@ -15,10 +14,9 @@ export const config: Config = {
 	runtime: 'edge'
 };
 
-export const POST = (async ({ request, locals: { getSession } }) => {
+export const POST = (async ({ request }) => {
 	const json = await request.json();
 	const { messages, previewToken } = json;
-	const session = await getSession();
 
 	// Create an OpenAI API client
 	const config = new Configuration({
@@ -36,33 +34,12 @@ export const POST = (async ({ request, locals: { getSession } }) => {
 
 	// Convert the response into a friendly text-stream
 	const stream = OpenAIStream(response, {
+		// eslint-disable-next-line @typescript-eslint/no-unused-vars
 		async onCompletion(completion) {
-			const title = messages[0].content.substring(0, 100);
-			const userId = session?.user?.id;
-			if (userId) {
-				const id = json.id ?? nanoid();
-				const createdAt = Date.now();
-				const path = `/chat/${id}`;
-				const payload = {
-					id,
-					title,
-					userId,
-					createdAt,
-					path,
-					messages: [
-						...messages,
-						{
-							content: completion,
-							role: 'assistant'
-						}
-					]
-				};
-				await kv.hmset(`chat:${id}`, payload);
-				await kv.zadd(`user:chat:${userId}`, {
-					score: createdAt,
-					member: `chat:${id}`
-				});
-			}
+			// const title = messages[0].content.substring(0, 100);
+			// const id = json.id ?? nanoid();
+			// const createdAt = Date.now();
+			return
 		}
 	});
 
