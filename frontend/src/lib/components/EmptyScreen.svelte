@@ -8,16 +8,16 @@
 
 	const exampleMessages = [
 		{
-			heading: 'Clarify legal terms',
-			message: `What does "force majeure" mean in a contract?`
+			heading: 'Reasons for visa',
+			message: `What are the possible reasons I can select for my visit?`
 		},
 		{
-			heading: 'Help with a legal form',
-			message: `How do I fill out the "Power of Attorney" form?`
+			heading: 'Accepted Passport Types',
+			message: `What types of passports are accepted for the visa application?`
 		},
 		{
-			heading: 'Draft a legal letter',
-			message: `Draft a formal letter to dispute a parking ticket.`
+			heading: 'Allowed French territories',
+			message: `Which French territories can I visit with this visa?`
 		}
 	];
 </script>
@@ -26,9 +26,7 @@
 	<div class="rounded-lg border bg-background p-8">
 		<h1 class="mb-2 text-lg font-semibold">Welcome to Legal Buddy!</h1>
 		<p class="mb-2 leading-normal text-muted-foreground">
-			Your AI-powered assistant for navigating complex legal forms and documents. Built with
-			<ExternalLink href="https://kit.svelte.dev">SvelteKit</ExternalLink> and
-			<ExternalLink href="https://vercel.com/storage/kv">Vercel KV</ExternalLink>.
+			Your AI-powered assistant for navigating complex legal forms and documents.
 		</p>
 		<p class="leading-normal text-muted-foreground">
 			You can ask for assistance or try one of these examples:
