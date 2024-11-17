@@ -30,6 +30,10 @@ export const POST = (async ({ request }) => {
 
 	const chatpayload = [
 		{
+			role: "system",
+			content: 'You are a visa assistant, you must answer in english'
+		},
+		{
 			role: 'user',
 			content: chatPrompt
 		}

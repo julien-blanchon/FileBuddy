@@ -53,7 +53,7 @@
 					bind:highlighted_id
 					onClickOverlayButton={async ({ id, bbox, page, content }) => {
 						// input.set(content);
-						input.set('You are a visa assistant, you must answer in english' + content);
+						input.set(content);
 						context = { id: id.toString(), content: content };
 
 						// Wait for 0.5s than submit and than reset context and input
