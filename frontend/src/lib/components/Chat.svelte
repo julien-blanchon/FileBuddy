@@ -25,7 +25,7 @@
 	export let context: { id: string; content: string } | undefined = undefined;
 </script>
 
-<div class="flex flex-col h-full">
+<div class="flex flex-col h-full overflow-scroll">
 	<div class={cn('pb-3 pt-4 md:pt-10 mx-20 flex-grow h-full', className)}>
 		{#if $messages.length}
 			<ChatList {messages} />
@@ -34,7 +34,7 @@
 		{/if}
 	</div>
 
-	<div class="sticky bottom-0 max-h-40 z-10 h-full overflow-hidden">
+	<div class="sticky bottom-0 max-h-40 z-10 h-full overflow-scroll">
 		<ChatPanel
 			bind:highlighted_id
 			{id}
